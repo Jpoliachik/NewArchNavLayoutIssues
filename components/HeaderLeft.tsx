@@ -7,7 +7,7 @@ export function HeaderLeft({ onPress, style, ...props }: HeaderBackButtonProps) 
 
   return (
     <TouchableOpacity hitSlop={20} onPress={handlePress} style={[style]} {...props}>
-      <Image source={require("@/assets/images/icon-close.png")} style={{ height: 30, tintColor: "blue", width: 30 }} />
+      <Image source={require("@/assets/images/icon-close.png")} style={{ height: 18, tintColor: "blue", width: 18 }} />
     </TouchableOpacity>
   );
 }

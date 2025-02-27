@@ -5,8 +5,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export default function GreenModal() {
   return (
     <View style={{ flex: 1 }}>
-      <SafeAreaView>
-        <Button title="dismissAll" onPress={() => router.dismissAll()} />
+      <SafeAreaView style={{ flex: 1 }}>
+        <Button title="dismissTo /blue" onPress={() => router.dismissTo("/blue")} />
+        <View style={{ flex: 1, width: 50, backgroundColor: "green" }} />
       </SafeAreaView>
     </View>
   );

@@ -36,24 +36,24 @@ export default function RootLayout() {
         <Stack.Screen
           name="green/index"
           options={{
-            // animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
-            headerLeft: () => <HeaderLeft />,
-            headerTintColor: "blue",
-            // headerTitleAlign: "center",
-            // headerTitleStyle: { color: "black" },
-            headerStyle: { backgroundColor: "#d2f7d7" },
-            presentation: "modal",
-          }}
-        />
-        <Stack.Screen
-          name="green/green-modal"
-          options={{
-            // animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
+            animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
             headerLeft: () => <HeaderLeft />,
             // headerTintColor: "blue",
             // headerTitleAlign: "center",
             // headerTitleStyle: { color: "black" },
-            headerStyle: { backgroundColor: "#d2f7d7" },
+            // headerStyle: { backgroundColor: "green" },
+            presentation: "modal",
+          }}
+        />
+        <Stack.Screen
+          name="green/modal"
+          options={{
+            animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
+            headerLeft: () => <HeaderLeft />,
+            // headerTintColor: "blue",
+            headerTitleAlign: "center",
+            // headerTitleStyle: { color: "black" },
+            // headerStyle: { backgroundColor: "green" },
             presentation: "modal",
           }}
         />

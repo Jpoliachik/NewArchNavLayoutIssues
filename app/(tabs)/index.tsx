@@ -1,8 +1,9 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, Button } from "react-native";
+import { Image, StyleSheet, Platform, TouchableOpacity, Button, View } from "react-native";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedView } from "@/components/ThemedView";
 import { Link, router } from "expo-router";
+import { useState } from "react";
 
 export default function HomeScreen() {
   return (

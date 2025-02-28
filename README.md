@@ -18,6 +18,7 @@ https://github.com/software-mansion/react-native-screens/issues/2578
 
 ## Issue 3: View Height Flickering
 On the blue/index screen, the view height flickers frequently - specifically when the TouchableOpacity is pressed and during modal transitions. This is especially problematic for views that pin content to the bottom of the screen.
+Watch the bottom left corner of the video: 
 
 | Video |
 |:-----:|

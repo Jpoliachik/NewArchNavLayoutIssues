@@ -4,3 +4,7 @@ Issues
 - iOS: on green/index, show the modal, then push green/modal. green/index is removed before the next screen is pushed - clear visual issues. Not an issue on Android.
 - on blue/index the view height flickers often. When the TouchableOpacity is pressed & when the push modal is transitioning.
 - on Android physical device, the headerLeft back button pressable is not working. See video using Samsung Galaxy S9. This is much easier to reproduce on a physical lower-end Android device.
+https://github.com/user-attachments/assets/c0e8a53a-9407-4d4b-a0a8-e5eed99591f5
+
+
+  

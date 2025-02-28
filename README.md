@@ -20,8 +20,9 @@
 | <video src="https://github.com/user-attachments/assets/e49521c7-29b1-464a-afc9-fec3e100cb2a" controls width="400"></video> |
 
 ## Issue 3: headerLeft Pressable Issues
-- `hitSlop` often does not work for headerLeft Pressables. This is easier to reproduce on `red` than `green`, strangely. 
-On Android physical devices, particularly lower-end ones like the Samsung Galaxy S9, the headerLeft back button's pressable area is not working correctly.
+- `hitSlop` often does not work for headerLeft Pressables. This is easier to reproduce on `red` than `green`, strangely.
+- See video where I'm repeatedly clicking, but the press does not get picked up within the expected `hitSlop={20}` radius.
+- This issue affects both iOS and Android
 
 https://github.com/software-mansion/react-native-screens/issues/1981
 
@@ -36,6 +37,8 @@ https://github.com/software-mansion/react-native-screens/issues/1981
   - Present `green/modal`
   - `dismissTo(blue)`
 - This causes several major issues. You'll see `blue/subroute` is still mounted behind `blue/index` with major layout issues. Then after tapping around the screen freezes and won't receive any touches. After navigating away and back, the screen goes blank.
+
+https://github.com/software-mansion/react-native-screens/issues/2578
 
 | Video |
 |:-----:|

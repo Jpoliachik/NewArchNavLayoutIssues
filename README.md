@@ -30,17 +30,17 @@ https://github.com/software-mansion/react-native-screens/issues/1981
 |:-----:|
 | <video src="https://github.com/user-attachments/assets/ea439add-f9c5-48ee-a3b2-406dee209984" controls width="400"></video> |
 
-## Issue 4: Android dismissTo freezes screen
+## Issue 4: dismissTo breaks navigation stack / freezes screen
 - Steps to reproduce:
   - Navigate to `blue`
   - Navigate to `blue/subroute`
   - Present `green/modal`
   - `dismissTo(blue)`
-- This causes several major issues. You'll see `blue/subroute` is still mounted behind `blue/index` with major layout issues. Then after tapping around the screen freezes and won't receive any touches. After navigating away and back, the screen goes blank.
+- On Android This causes several major issues. You'll see `blue/subroute` is still mounted behind `blue/index` with major layout issues. Then after tapping around the screen freezes and won't receive any touches. After navigating away and back, the screen goes blank.
+- On iOS this breaks the stack order. You'll see `blue/index` shown, but then `blue/subroute` is now behind it in the stack, and hitting 'back' once will weirdly dismiss both screens.
 
 https://github.com/software-mansion/react-native-screens/issues/2578
 
-| Video |
-|:-----:|
-| <video src="https://github.com/user-attachments/assets/04f7ab68-6bc3-4a2f-bfe5-aa2f332dfdac" controls width="400"></video> |
-
+| Android | iOS |
+|:-----:|:-----:|
+| <video src="https://github.com/user-attachments/assets/04f7ab68-6bc3-4a2f-bfe5-aa2f332dfdac" controls width="400"></video> | <video src="https://github.com/user-attachments/assets/8a1696f3-7178-4ed2-bd8f-1836bfed2d3e" controls width="400"></video> |

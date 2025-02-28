@@ -1,15 +1,18 @@
 ## Issue 1: iOS Modal Screen Height
-See how `green/index` doesn't properly respect the safe area bottom inset. The screen height is incorrectly rendered too tall. When navigating to `green/modal` and back, the height corrects itself. However, subsequent navigation to `green/modal` causes the height to flicker during transition, showing the incorrect height briefly. This issue only affects iOS. It happens consistently.
+- `green` routes which have `presentation: "modal"` are rendered too tall. Notice how the dark green view should be pinned to the bottom, but it is rendered off screen.
+- Navigate to `green`, then `green/modal`, then dismiss back to `green`. Notice how the height corrects itself. However, subsequent navigation to `green/modal` causes the height to flicker during transition, showing the incorrect height briefly.
+- This issue only affects iOS. It happens consistently.
 
 https://github.com/software-mansion/react-native-screens/issues/2587
 
 | Screenshot | Video |
 |:----------:|:-----:|
-| <img src="https://github.com/user-attachments/assets/e1e1105f-b4d0-4535-9717-f12a3fb94355" width="400" /> | <video src="https://github.com/user-attachments/assets/71898fad-d23c-4d62-b6f5-21fe46e5c2ee" controls width="400"></video> |
+| <img src="https://github.com/user-attachments/assets/eda664a4-a1a6-4027-a760-ae97958a9686" width="400" /> | <video src="https://github.com/user-attachments/assets/ac8e4bc2-dce4-44e9-b891-b3fe24faeb1c" controls width="400"></video> |
 
 ## Issue 2: iOS Modal Transition Issue
 On iOS when on the green/index screen, if you show the modal and then push to green/modal, the green/index view is removed before the next screen is pushed, causing visible display issues. This issue only affects iOS. It happens consistently.
 
+https://github.com/software-mansion/react-native-screens/issues/2668
 https://github.com/software-mansion/react-native-screens/issues/2578
 
 | Video |

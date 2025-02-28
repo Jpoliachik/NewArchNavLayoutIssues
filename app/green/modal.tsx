@@ -6,8 +6,11 @@ export default function GreenModal() {
   const insets = useSafeAreaInsets();
   return (
     <View style={{ flex: 1, paddingBottom: insets.bottom }}>
-      <Button title="dismissTo /explore" onPress={() => router.dismissTo("/(tabs)")} />
+      <Button title="dismiss()" onPress={() => router.dismiss()} />
+      <Button title="dismissTo /blue" onPress={() => router.dismissTo("/blue")} />
+      <Button title="dismissTo /red" onPress={() => router.dismissTo("/red")} />
       <View style={{ flex: 1, width: 50, backgroundColor: "green" }} />
+      <View style={{ height: 50, width: "100%", backgroundColor: "darkgreen" }} />
     </View>
   );
 }

@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
-import { Platform } from "react-native";
 import { HeaderLeft } from "@/components/HeaderLeft";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -36,11 +35,8 @@ export default function RootLayout() {
         <Stack.Screen
           name="green/index"
           options={{
-            animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
             headerLeft: () => <HeaderLeft />,
-            headerShadowVisible: false,
             headerTitle: "Green",
-            // headerTintColor: "blue",
             headerTitleAlign: "center",
             headerTitleStyle: { color: "green" },
             presentation: "modal",
@@ -49,13 +45,16 @@ export default function RootLayout() {
         <Stack.Screen
           name="green/modal"
           options={{
-            animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
             headerLeft: () => <HeaderLeft />,
-            // headerTintColor: "blue",
             headerTitleAlign: "center",
             headerTitleStyle: { color: "green" },
-            // headerStyle: { backgroundColor: "green" },
             presentation: "modal",
+          }}
+        />
+        <Stack.Screen
+          name="red/index"
+          options={{
+            headerLeft: () => <HeaderLeft />,
           }}
         />
       </Stack>

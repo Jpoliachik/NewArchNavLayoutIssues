@@ -7,6 +7,7 @@ export default function BlueScreen() {
     <View style={{ flex: 1, paddingBottom: insets.bottom }}>
       <Button title="push /blue/stack" onPress={() => router.push("/blue/stack")} />
       <View style={{ flex: 1, backgroundColor: "blue", width: 50 }} />
+      <View style={{ height: 50, backgroundColor: "darkblue", width: "100%" }} />
     </View>
   );
 }

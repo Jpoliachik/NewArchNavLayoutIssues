@@ -1,14 +1,13 @@
 import { router } from "expo-router";
 import { Button, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function GreenModal() {
+  const insets = useSafeAreaInsets();
   return (
-    <View style={{ flex: 1 }}>
-      <SafeAreaView style={{ flex: 1 }}>
-        <Button title="dismissTo /blue" onPress={() => router.dismissTo("/blue")} />
-        <View style={{ flex: 1, width: 50, backgroundColor: "green" }} />
-      </SafeAreaView>
+    <View style={{ flex: 1, paddingBottom: insets.bottom }}>
+      <Button title="dismissTo /explore" onPress={() => router.dismissTo("/(tabs)")} />
+      <View style={{ flex: 1, width: 50, backgroundColor: "green" }} />
     </View>
   );
 }

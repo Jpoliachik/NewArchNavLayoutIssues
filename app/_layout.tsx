@@ -38,10 +38,11 @@ export default function RootLayout() {
           options={{
             animation: Platform.select({ android: "slide_from_bottom", native: "default" }),
             headerLeft: () => <HeaderLeft />,
+            headerShadowVisible: false,
+            headerTitle: "Green",
             // headerTintColor: "blue",
-            // headerTitleAlign: "center",
-            // headerTitleStyle: { color: "black" },
-            // headerStyle: { backgroundColor: "green" },
+            headerTitleAlign: "center",
+            headerTitleStyle: { color: "green" },
             presentation: "modal",
           }}
         />
@@ -52,7 +53,7 @@ export default function RootLayout() {
             headerLeft: () => <HeaderLeft />,
             // headerTintColor: "blue",
             headerTitleAlign: "center",
-            // headerTitleStyle: { color: "black" },
+            headerTitleStyle: { color: "green" },
             // headerStyle: { backgroundColor: "green" },
             presentation: "modal",
           }}

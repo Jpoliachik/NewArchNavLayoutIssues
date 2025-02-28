@@ -25,6 +25,19 @@ On Android physical devices, particularly lower-end ones like the Samsung Galaxy
 
 https://github.com/software-mansion/react-native-screens/issues/1981
 
-| iOS hitSlop |
+| Video |
 |:-----:|
 | <video src="https://github.com/user-attachments/assets/ea439add-f9c5-48ee-a3b2-406dee209984" controls width="400"></video> |
+
+## Issue 4: Android dismissTo freezes screen
+- Steps to reproduce:
+  - Navigate to `blue`
+  - Navigate to `blue/subroute`
+  - Present `green/modal`
+  - `dismissTo(blue)`
+- This causes several major issues. You'll see `blue/subroute` is still mounted behind `blue/index` with major layout issues. Then after tapping around the screen freezes and won't receive any touches. After navigating away and back, the screen goes blank.
+
+| Video |
+|:-----:|
+| <video src="https://github.com/user-attachments/assets/04f7ab68-6bc3-4a2f-bfe5-aa2f332dfdac" controls width="400"></video> |
+

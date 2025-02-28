@@ -7,6 +7,7 @@ export default function GreenModal() {
   return (
     <View style={{ flex: 1, paddingBottom: insets.bottom }}>
       <Button title="dismiss()" onPress={() => router.dismiss()} />
+      <Button title="dismissAll()" onPress={() => router.dismissAll()} />
       <Button title="dismissTo /blue" onPress={() => router.dismissTo("/blue")} />
       <Button title="dismissTo /red" onPress={() => router.dismissTo("/red")} />
       <View style={{ flex: 1, width: 50, backgroundColor: "green" }} />

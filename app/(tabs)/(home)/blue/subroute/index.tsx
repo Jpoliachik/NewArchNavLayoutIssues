@@ -6,6 +6,7 @@ export default function BlueStack() {
   const tabHeight = useBottomTabBarHeight();
   return (
     <View style={{ flex: 1, paddingBottom: tabHeight }}>
+      <Button title="dismiss" onPress={() => router.dismiss()} />
       <Button title="dismissAll" onPress={() => router.dismissAll()} />
       <Button title="navigate /green/modal" onPress={() => router.navigate("/green/modal")} />
       <Button title="navigate /red/subroute" onPress={() => router.navigate("/red/subroute")} />

@@ -45,13 +45,16 @@ https://github.com/software-mansion/react-native-screens/issues/2578
 |:-----:|:-----:|
 | <video src="https://github.com/user-attachments/assets/04f7ab68-6bc3-4a2f-bfe5-aa2f332dfdac" controls width="400"></video> | <video src="https://github.com/user-attachments/assets/8a1696f3-7178-4ed2-bd8f-1836bfed2d3e" controls width="400"></video> |
 
-## Issue 5: Android Screen height
-- Steps to reproduce:
+## Issue 5: Inconsistent Android Screen Height
+- Multiple instances where Android screens are rendered with incorrect height, which changes as we navigate around and is often inconsistent / sporadic. 
+- Consistent repro:
   - Navigate to `blue`
   - Navigate to `blue/subroute`
   - Dismiss back to `blue`. Notice how the screen's height changes with the bottom bar no longer pinned to the bottom.
-- We're able to reproduce this issue on Android for the `blue` Stack routes as seen, but in other apps we've also seen inconsistent screen heights in Modal screens too.
+- We're able to consistently reproduce this issue on Android for the `blue` Stack routes as seen, but in other apps we've also seen inconsistent screen heights in Modal screens too.
+  - See second video for `green` modal issue captured on an older Samsung S9 - notice the green bar on `green/modal` renders taller initially. This was not as consistent to reproduce. 
 
-| Video |
-|:-----:|
-| <video src="https://github.com/user-attachments/assets/09306d7e-aa03-4f04-880e-d073ffc0e029" controls width="400"></video> |
+
+| Stack Screen | Modal Screen |
+|:-----:| :-----:|
+| <video src="https://github.com/user-attachments/assets/09306d7e-aa03-4f04-880e-d073ffc0e029" controls width="400"></video> | <video src="https://github.com/user-attachments/assets/da5d41cb-76b4-4767-b49c-890621234a7d" controls width="400"></video> |

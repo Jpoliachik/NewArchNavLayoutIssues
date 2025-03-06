@@ -53,7 +53,7 @@ https://github.com/software-mansion/react-native-screens/issues/2578
   - Dismiss back to `blue`. Notice how the screen's height changes with the bottom bar no longer pinned to the bottom.
 - We're able to consistently reproduce this issue on Android for the `blue` Stack routes as seen, but in other apps we've also seen inconsistent screen heights in Modal screens too.
   - See second video for `green` modal issue captured on an older Samsung S9 - notice the green bar on `green/modal` renders taller initially. This was not as consistent to reproduce. 
-
+- This issue might be related to Issue 1: iOS Modal Screen Height, but the behavior is different enough to warrant separate documentation. 
 
 | Stack Screen | Modal Screen |
 |:-----:| :-----:|

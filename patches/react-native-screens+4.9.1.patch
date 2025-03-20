@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-native-screens/ios/RNSScreen.mm b/node_modules/react-native-screens/ios/RNSScreen.mm
+index 6f46f93..ca06f4e 100644
+--- a/node_modules/react-native-screens/ios/RNSScreen.mm
++++ b/node_modules/react-native-screens/ios/RNSScreen.mm
+@@ -1484,7 +1484,9 @@ - (void)viewDidLayoutSubviews
+ 
+   if (isDisplayedWithinUINavController || self.screenView.isPresentedAsNativeModal) {
+ #ifdef RCT_NEW_ARCH_ENABLED
+-    [self.screenView updateBounds];
++      // this causes a layout cycle with some funky side effects in Fabric.
++      // commenting out for now, which may result in some views being too tall.
++//    [self.screenView updateBounds];
+ #else
+     if (!CGRectEqualToRect(_lastViewFrame, self.screenView.frame)) {
+       _lastViewFrame = self.screenView.frame;

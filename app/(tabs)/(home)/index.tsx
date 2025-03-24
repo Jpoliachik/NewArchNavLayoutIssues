@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Platform, TouchableOpacity, Button, View } from "react-native";
+import { Image, StyleSheet, View, Pressable, Text } from "react-native";
 
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedView } from "@/components/ThemedView";
@@ -18,9 +18,15 @@ export default function HomeScreen() {
           <ThemedText type="title">Home</ThemedText>
         </ThemedView>
         <View style={{ flex: 1, gap: 8 }}>
-          <Button title="Green" onPress={() => router.navigate("/green")} />
-          <Button title="Blue" onPress={() => router.navigate("/blue")} />
-          <Button title="Red" onPress={() => router.navigate("/red")} />
+          <Pressable onPress={() => router.navigate("/green")}>
+            <Text>Green</Text>
+          </Pressable>
+          <Pressable onPress={() => router.navigate("/blue")}>
+            <Text>Blue</Text>
+          </Pressable>
+          <Pressable onPress={() => router.navigate("/red")}>
+            <Text>Red</Text>
+          </Pressable>
         </View>
       </ParallaxScrollView>
     </>

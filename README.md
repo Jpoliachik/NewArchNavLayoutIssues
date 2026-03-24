@@ -18,9 +18,10 @@ After upgrading from Expo SDK 52 to SDK 55 (React Native 0.83.2, react-native-sc
 | 4. dismissTo breaks navigation        | Fixed  | Navigation stack behaves correctly                |
 | 5. Inconsistent Android Screen Height | Fixed  | Screen heights are consistent                     |
 
+Found one issue during re-test where view flickers on dismiss on Android:
 |         Android Retest         |
 | :----------------------------: |
-| TODO: add Android retest video |
+| <video src="https://github.com/user-attachments/assets/c6dccb6e-b66f-4547-ad32-36d33b010adc" controls width="400"></video> |
 
 ---
 

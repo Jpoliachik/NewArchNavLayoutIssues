@@ -1,36 +1,72 @@
-## Issue 1: iOS Modal Screen Height
+# New Architecture Navigation Layout Issues
+
+> **Update (2026-03-24): Retested on Expo SDK 55 — all issues appear to be fixed.**
+
+## Expo 55 Retest Results
+
+After upgrading from Expo SDK 52 to SDK 55 (React Native 0.83.2, react-native-screens ~4.23.0), all five issues were retested on:
+
+- iOS Simulator (iOS 26)
+- Android device
+  Both running via Expo Go.
+
+| Issue                                 | Status | Notes                                             |
+| ------------------------------------- | ------ | ------------------------------------------------- |
+| 1. iOS Modal Screen Height            | Fixed  | Modal screens render at correct height            |
+| 2. View Height Flickering             | Fixed  | No flickering during navigation or button presses |
+| 3. headerLeft Pressable Issues        | Fixed  | hitSlop works as expected                         |
+| 4. dismissTo breaks navigation        | Fixed  | Navigation stack behaves correctly                |
+| 5. Inconsistent Android Screen Height | Fixed  | Screen heights are consistent                     |
+
+|         Android Retest         |
+| :----------------------------: |
+| TODO: add Android retest video |
+
+---
+
+## Original Issues (Expo SDK 52)
+
+The issues below were originally documented on Expo SDK 52 with New Architecture enabled. They were filed against [react-native-screens](https://github.com/software-mansion/react-native-screens) and related libraries. If you arrived here from one of those issues, note that upgrading to Expo SDK 55 resolves them.
+
+---
+
+### Issue 1: iOS Modal Screen Height
+
 - `green` routes which have `presentation: "modal"` are rendered too tall. Notice how the dark green view should be pinned to the bottom, but it is rendered off screen.
 - Navigate to `green`, then `green/modal`, then dismiss back to `green`. Notice how the height corrects itself. However, subsequent navigation to `green/modal` causes the height to flicker during transition, showing the incorrect height briefly.
 - This issue only affects iOS. It happens consistently.
 - Related Issues
   - https://github.com/software-mansion/react-native-screens/issues/2587
 
-| Screenshot | Video |
-|:----------:|:-----:|
+|                                                Screenshot                                                 |                                                           Video                                                            |
+| :-------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/user-attachments/assets/eda664a4-a1a6-4027-a760-ae97958a9686" width="400" /> | <video src="https://github.com/user-attachments/assets/ac8e4bc2-dce4-44e9-b891-b3fe24faeb1c" controls width="400"></video> |
 
-## Issue 2: View Height Flickering
+### Issue 2: View Height Flickering
+
 - `blue` and `red` routes within a Stack flicker frequently while Buttons are being pressed, during navigation transitions, and during initial renders. This is especially problematic for views that pin content to the bottom of the screen.
 - Related Issues
   - https://github.com/software-mansion/react-native-screens/issues/2607
   - https://github.com/software-mansion/react-native-screens/issues/2663
 
-| Video |
-|:-----:|
+|                                                           Video                                                            |
+| :------------------------------------------------------------------------------------------------------------------------: |
 | <video src="https://github.com/user-attachments/assets/e49521c7-29b1-464a-afc9-fec3e100cb2a" controls width="400"></video> |
 
-## Issue 3: headerLeft Pressable Issues
+### Issue 3: headerLeft Pressable Issues
+
 - `hitSlop` often does not work for headerLeft Pressables. This is easier to reproduce on `red` than `green`, strangely.
 - See video where I'm repeatedly clicking, but the press does not get picked up within the expected `hitSlop={20}` radius.
 - This issue affects both iOS and Android
 
 https://github.com/software-mansion/react-native-screens/issues/1981
 
-| Video |
-|:-----:|
+|                                                           Video                                                            |
+| :------------------------------------------------------------------------------------------------------------------------: |
 | <video src="https://github.com/user-attachments/assets/ea439add-f9c5-48ee-a3b2-406dee209984" controls width="400"></video> |
 
-## Issue 4: dismissTo breaks navigation stack / freezes screen
+### Issue 4: dismissTo breaks navigation stack / freezes screen
+
 - Steps to reproduce:
   - Navigate to `blue`
   - Navigate to `blue/subroute`
@@ -41,20 +77,21 @@ https://github.com/software-mansion/react-native-screens/issues/1981
 
 https://github.com/software-mansion/react-native-screens/issues/2578
 
-| Android | iOS |
-|:-----:|:-----:|
+|                                                          Android                                                           |                                                            iOS                                                             |
+| :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 | <video src="https://github.com/user-attachments/assets/04f7ab68-6bc3-4a2f-bfe5-aa2f332dfdac" controls width="400"></video> | <video src="https://github.com/user-attachments/assets/8a1696f3-7178-4ed2-bd8f-1836bfed2d3e" controls width="400"></video> |
 
-## Issue 5: Inconsistent Android Screen Height
-- Multiple instances where Android screens are rendered with incorrect height, which changes as we navigate around and is often inconsistent / sporadic. 
+### Issue 5: Inconsistent Android Screen Height
+
+- Multiple instances where Android screens are rendered with incorrect height, which changes as we navigate around and is often inconsistent / sporadic.
 - Consistent repro:
   - Navigate to `blue`
   - Navigate to `blue/subroute`
   - Dismiss back to `blue`. Notice how the screen's height changes with the bottom bar no longer pinned to the bottom.
 - We're able to consistently reproduce this issue on Android for the `blue` Stack routes as seen, but in other apps we've also seen inconsistent screen heights in Modal screens too.
-  - See second video for `green` modal issue captured on an older Samsung S9 - notice the green bar on `green/modal` renders taller initially. This was not as consistent to reproduce. 
-- This issue might be related to Issue 1: iOS Modal Screen Height, but the behavior is different enough to warrant separate documentation. 
+  - See second video for `green` modal issue captured on an older Samsung S9 - notice the green bar on `green/modal` renders taller initially. This was not as consistent to reproduce.
+- This issue might be related to Issue 1: iOS Modal Screen Height, but the behavior is different enough to warrant separate documentation.
 
-| Stack Screen | Modal Screen |
-|:-----:| :-----:|
+|                                                        Stack Screen                                                        |                                                        Modal Screen                                                        |
+| :------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------: |
 | <video src="https://github.com/user-attachments/assets/09306d7e-aa03-4f04-880e-d073ffc0e029" controls width="400"></video> | <video src="https://github.com/user-attachments/assets/da5d41cb-76b4-4767-b49c-890621234a7d" controls width="400"></video> |

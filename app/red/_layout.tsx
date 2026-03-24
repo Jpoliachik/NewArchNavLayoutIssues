@@ -1,2 +1,8 @@
 import { Stack } from "expo-router";
-export default Stack;
+export default function RedLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+    </Stack>
+  );
+}
